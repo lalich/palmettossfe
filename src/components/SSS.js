@@ -12,7 +12,7 @@ const SSS = ({specialist}) => {
 
 
     return <div style={div}>
-        <Link to={`/post/${specialist.id}`}>
+        <Link to={`/sss/${specialist.id}`}>
             <h1>{specialist.first_name}</h1>
             <h2>{specialist.last_name}</h2>
             <img src={specialist.sss_photo} alt="Profile Image" />

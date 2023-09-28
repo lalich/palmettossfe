@@ -12,7 +12,7 @@ const Schools = ({school}) => {
 
 
     return <div style={div}>
-        <Link to={`/post/${school.id}`}>
+        <Link to={`/school/${school.id}`}>
             <h1>{school.name}</h1>
             <img src={school.school_photo} alt="School Image" />
             <h4>State: {school.state}</h4>

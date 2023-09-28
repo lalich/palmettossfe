@@ -11,13 +11,15 @@ export const createSchoolAction = async({request}) => {
         zip_code: formData.get("zip_code"),
         security_description: formData.get("security_description")
     }
+    console.log(newSchool)
     await fetch(urlSchool, {
         method: 'post',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(newSchool)
+        body: JSON.stringify(newSchool)     
     })
+    console.log(newSchool)
     return redirect('/')
 }
 // Create SSS
@@ -61,7 +63,7 @@ export const updateSchoolAction = async({request, params}) => {
         },
         body: JSON.stringify(updatedSchool)
     })
-    return redirect(`/post/${id}`)
+    return redirect(`/school/${id}`)
 }
 
 // update SSS
@@ -85,7 +87,7 @@ export const updateSSSAction = async({request, params}) => {
         },
         body: JSON.stringify(updatedSSS)
     })
-    return redirect(`/post/${id}`)
+    return redirect(`/sss/${id}`)
 }
 
 // delete school

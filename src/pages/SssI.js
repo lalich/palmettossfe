@@ -1,14 +1,12 @@
 import SSS from '../components/SSS'
-import Schools from '../components/Schools'
 import { useLoaderData, Form } from 'react-router-dom'
-import { ssssAndSchoolsLoader } from '../loaders'
+import { sssIndexLoader } from '../loaders'
 import Header from '../components/Header'
 
-const Index = () => {
-
-    const { ssss, schools } = useLoaderData(ssssAndSchoolsLoader())
-        console.log(ssss)
-        console.log(schools)
+const SssI = () => {
+    const ssss = sssIndexLoader()
+       
+    
     return<>
     <div style={{textAlign: "center"}}>
         <Header></Header>
@@ -28,21 +26,7 @@ const Index = () => {
     </div>
     <h3>Our Current Specialists</h3>
     {ssss.map((sss) => <SSS key={sss.id} specialist={sss}/>)}
-    <h3>Schools we Protect</h3>
-    {schools.map((school) => <Schools key={school.id} school={school}/>)}
-    <h3>Become a Protected School</h3>
-    <Form method='post' action="/create/School">
-            <input type="text" name='name' placeholder='School Name'/>
-            <input type="text" name='school_photo' placeholder='School Photo' />
-            <input type="text" name='state' placeholder='State (two letters)' />
-            <input type="text" name='zip_code' placeholder='Zip Code' />
-            <input type="text" name='description' placeholder='Provide a 300 character or less description of your services.' />
-           
-     
-            <button>Join PSS</button>
-            <h5>All Fields Required to Join</h5>
-            </Form>
     </>
 }
 
-export default Index
+export default SssI

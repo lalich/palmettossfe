@@ -2,9 +2,9 @@ import { Link, useLoaderData, Form } from "react-router-dom";
 import Header from '../components/Header'
 import { sssShowLoader } from "../loaders";
 
-const sssShow = () => {
-  const specialist = sssShowLoader;
-
+const SssShow = () => {
+  const specialist = useLoaderData(sssShowLoader);
+console.log(specialist)
   const div = {
     textAlign: "center",
     border: "3px solid green",
@@ -13,10 +13,10 @@ const sssShow = () => {
   };
  
   return (
+    <>
+    <Header />
     <div style={div}>
-       <Header>
-    
-    </Header>
+     
       <h2>{specialist.first_name} {specialist.last_name}</h2>
             
             <img src={specialist.sss_photo} alt="Profile Image" />
@@ -46,7 +46,8 @@ const sssShow = () => {
       </div>
       <Link to="/">Back to the Marketplace</Link>
     </div>
+    </>
   );
 }
 
-export default sssShow;
+export default SssShow;
