@@ -1,0 +1,5 @@
+.custom-cursor {
+    cursor: url('../../public/PSS_Icon.png'), auto;
+    transform: scale(3.3);
+    transform-origin: center;
+}

@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.logo-left,
+.logo-right {
+width: 151px;
+height: 151px;
+position:inherit;
+}
+
+h1 {
+    /* color: #758168; */
+    color: #62b5e5;
+    text-decoration: underline;
+}
+
+h5 {
+    color: rgb(239, 239, 69)
+}
