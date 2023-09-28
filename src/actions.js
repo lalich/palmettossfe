@@ -13,9 +13,9 @@ export const createSchoolAction = async({request}) => {
     }
     console.log(newSchool)
     await fetch(urlSchool, {
-        method: 'post',
+        method: "post",
         headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
         },
         body: JSON.stringify(newSchool)     
     })
@@ -23,8 +23,8 @@ export const createSchoolAction = async({request}) => {
     return redirect('/')
 }
 // Create SSS
-export const createSSSAction = async({request}) => {
-    const formData = await request.formData()
+export const createSSSAction = async ({ request }) => {
+    const formData = await request.formData();
     const newSSS = {
         first_name: formData.get("first_name"),
         last_name: formData.get("last_name"),
@@ -34,16 +34,19 @@ export const createSSSAction = async({request}) => {
         specialty: formData.get("specialty"),
         state: formData.get("state"),
         zip_code: formData.get("zip_code")
+    };
+console.log(newSSS)
+        await fetch(urlSSS, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(newSSS)
+        });
+
+            return redirect('/');
     }
-    await fetch(urlSSS, {
-        method: 'post',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newSSS)
-    })
-    return redirect('/')
-}
+
 
 // update school
 export const updateSchoolAction = async({request, params}) => {

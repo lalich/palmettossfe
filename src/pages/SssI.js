@@ -1,10 +1,11 @@
 import SSS from '../components/SSS'
-import { useLoaderData, Form } from 'react-router-dom'
+import { useLoaderData, Form, Link } from 'react-router-dom'
 import { sssIndexLoader } from '../loaders'
 import Header from '../components/Header'
 
 const SssI = () => {
-    const ssss = sssIndexLoader()
+    const ssss = useLoaderData(sssIndexLoader())
+    console.log(ssss)
        
     
     return<>
@@ -23,9 +24,14 @@ const SssI = () => {
             <button>Join PSS</button>
             <h5>All Fields Required to Join</h5>
             </Form>
+            
     </div>
     <h3>Our Current Specialists</h3>
-    {ssss.map((sss) => <SSS key={sss.id} specialist={sss}/>)}
+    {ssss.map((sss, index) => <SSS key={sss.id} specialist={sss}/>)}
+
+    
+    
+    <Link to="/">Back to the Marketplace</Link>
     </>
 }
 

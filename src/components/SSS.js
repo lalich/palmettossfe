@@ -2,6 +2,9 @@ import {Link} from 'react-router-dom';
 
 // describe the post prop
 const SSS = ({specialist}) => {
+    if (!specialist || !specialist.id) {
+        return <div>Error: Invalid specialist data</div>;
+    }
 
     const div = {
         textAlign: 'center',

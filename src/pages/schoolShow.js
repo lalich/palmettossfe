@@ -2,8 +2,8 @@ import { Link, useLoaderData, Form } from "react-router-dom";
 import Header from '../components/Header'
 import { schoolShowLoader } from "../loaders";
 
-const schoolShow = () => {
-  const school = schoolShowLoader
+const SchoolShow = () => {
+  const school = useLoaderData(schoolShowLoader)
 
   const div = {
     textAlign: "center",
@@ -12,11 +12,9 @@ const schoolShow = () => {
     margin: "30px auto",
   };
  
-  return (
+  return<> (
+    <Header></Header>
     <div style={div}>
-       <Header>
-    
-    </Header>
             <h2>{school.name}</h2>
             <img src={school.school_photo} alt="School Image" />
             <h4>State: {school.state}</h4>
@@ -25,8 +23,8 @@ const schoolShow = () => {
             
       
       <div style={{ textAlign: "center" }}>
-        <h2>Update Your Specialist</h2>
-        <Form method="post" action={`/update/${school.id}`}>
+        <h2>Update Your School</h2>
+        <Form method="post" action={`/update/School/${school.id}`}>
             <input type="text" name='name' placeholder='Schools Name' defaultValue={school.name}/>
             <input type="text" name='school_photo' placeholder='School Photo'  defaultValue={school.school_photo}/>
             <input type="text" name='state' placeholder='State (two letters)'  defaultValue={school.state}/>
@@ -36,14 +34,15 @@ const schoolShow = () => {
             
           <button>Update My Profile Beeze</button>
           </Form>
-          <Form method="post" action={`/delete/${school.id}`}>
+          <Form method="post" action={`/delete/School/${school.id}`}>
             <button>We no longer feel the need for protection!</button>
         </Form>
         
       </div>
       <Link to="/">Back to the Marketplace</Link>
     </div>
-  );
+    
+  );</>
 }
 
-export default schoolShow;
+export default SchoolShow;

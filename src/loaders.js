@@ -3,11 +3,8 @@ import { urlSchool, urlSSS } from './url'
 export const ssssAndSchoolsLoader = async () => {
     const ssssResponse = await fetch(`${urlSSS}`)
         const ssss = await ssssResponse.json()
-
     const schoolsResponse = await fetch(`${urlSchool}`)
         const schools = await schoolsResponse.json()
-    console.log('ssss', ssss)
-    console.log('schoools', schools)
     return { ssss, schools}
 }
 

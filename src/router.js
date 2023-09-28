@@ -2,7 +2,11 @@ import {createBrowserRouter, createRoutesFromElements, Route} from 'react-router
 import App from "./App";
 import Home from "./pages/Home";
 import SssShow from "./pages/SssShow";
-import SssI from "./pages/SssI"
+import SssI from "./pages/SssI";
+import SSS from "./components/SSS"
+import SchoolShow from "./pages/SchoolShow"
+import Schooli from "./pages/Schooli"
+import School from "./components/Schools"
 import {schoolIndexLoader, schoolShowLoader, sssIndexLoader, sssShowLoader, ssssAndSchoolsLoader} from "./loaders";
 import {createSchoolAction, createSSSAction, updateSchoolAction, updateSSSAction, deleteSchoolAction, deleteSSSAction} from "./actions";
 
@@ -11,14 +15,16 @@ const router = createBrowserRouter(createRoutesFromElements(
     <>
         <Route path="/" element={<App/>}>
             <Route path="" element={<Home/>} loader={ssssAndSchoolsLoader}/>
-            <Route path="sss" element={<SssI/>} loader={sssIndexLoader} />
-            <Route path="sss/:id" element={<SssShow/>} loader={sssShowLoader}/>
-            <Route path="create/SSS" action={createSSSAction}/>
-            <Route path="create/School" action={createSchoolAction}/>
-            <Route path="update/:id" action={updateSSSAction}/>
-            <Route path="update/:id" action={updateSchoolAction}/>
-            <Route path="delete/:id" action={deleteSSSAction}/>
-            <Route path="delete/:id" action={deleteSchoolAction}/>
+            <Route path="SSS" element={<SssI/>} loader={sssIndexLoader} />
+            <Route path="School" element={<Schooli/>} loader={schoolIndexLoader} />
+            <Route path="SSS/:id" element={<SssShow/>} loader={sssShowLoader}/>
+            <Route path="School/:id" element={<SchoolShow/>} loader={schoolShowLoader}/>
+            <Route path="create/SSS" element={<SSS/>} action={createSSSAction}/>
+            <Route path="create/School" element={<School/>} action={createSchoolAction}/>
+            <Route path="update/SSS/:id" action={updateSSSAction}/>
+            <Route path="update/School/:id" action={updateSchoolAction}/>
+            <Route path="delete/SSS/:id" action={deleteSSSAction}/>
+            <Route path="delete/School/:id" action={deleteSchoolAction}/>
         </Route>
     </>
 ));

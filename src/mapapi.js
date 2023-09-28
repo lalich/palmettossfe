@@ -1,0 +1,1 @@
+const map_api="AIzaSyBfmP5yDi6mI-8XTIhwW10PuE8QfpOtnJY"
