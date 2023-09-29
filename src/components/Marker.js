@@ -10,6 +10,7 @@ const Marker = ({ text }) => {
         backgroundImage:`url(${process.env.PUBLIC_URL}/PSS_Logo.png)`,
         backgroundSize: 'cover',
         cursor: hovered ? `url(${process.env.PUBLIC_URL}/PSS_Icon.png), auto` : 'auto',
+        
     };
 
     const markerTextStyle = {

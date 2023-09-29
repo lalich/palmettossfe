@@ -27,7 +27,7 @@ console.log(specialist)
             <h4>Zip: {specialist.zip_code}</h4>
       <div style={{ textAlign: "center" }}>
         <h2>Update Your Specialist</h2>
-        <Form method="post" action={`/update/${specialist.id}`}>
+        <Form method="post" action={`/update/SSS/${specialist.id}`}>
             <input type="text" name='first_name' placeholder='First Name' defaultValue={specialist.first_name}/>
             <input type="text" name='last_name' placeholder='Last Name'  defaultValue={specialist.last_name}/>
             <input type="text" name='sss_photo' placeholder='Your Photo'  defaultValue={specialist.sss_photo}/>
@@ -39,7 +39,7 @@ console.log(specialist)
           
           <button>Update My Profile Beeze</button>
           </Form>
-          <Form method="post" action={`/delete/${specialist.id}`}>
+          <Form method="post" action={`/delete/SSS/${specialist.id}`}>
             <button>I am done with this GiG, please deletel my profile!</button>
         </Form>
         

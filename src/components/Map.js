@@ -1,19 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import GoogleMapReact from 'google-map-react';
 import Marker from './Marker'
 
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
-
-export default function SimpleMap(){
-  const defaultProps = {
-    center: {
+export default function SimpleMap({ zipCode }){
+  const [center, setCenter] = useState({
       lat: 41.212649,
       lng: -114.209627
-    },
-    zoom: 8
-  };
+    });
+// fetching the zip code
+    useEffect(() => {
+        if (zipCode) {
+        const apiKey = "AIzaSyBfmP5yDi6mI-8XTIhwW10PuE8QfpOtnJY"
+        const geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${zipCode}&key=${apiKey}`
+        console.log(geocodeUrl)
+        fetch(geocodeUrl)
+            .then((response) => response.json())
+            .then((data) => {
+                console.log('Geocoding Response:', data)
+                if (data.status === 'OK' && data.results.length > 0) {
+                    const location = data.results[0].geometry.location
+                    console.log(location)
+                    setCenter({
+                        lat: location.lat,
+                        lng: location.lng
+                    })
+                    console.log(location.lat, location.lng)
+                } else {
+                    console.error('Geocoding failed')
+                }
+            })
+            .catch((error) => {
+                console.error('Error gittin those coords:', error)
+            })
+    }
+}, [zipCode]) // for the zippy change 
 
+    
+    const defaultProps = {
+        center,
+        zoom: 8
+    }
+  
 
   const handleApiLoaded = (map, maps) => {
     // use map and maps objects
@@ -29,11 +57,12 @@ export default function SimpleMap(){
         defaultZoom={defaultProps.zoom}
         yesIWantToUseGoogleMapApiInternals
         onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
+        animate={true}
 >
       
         <Marker
-            lat= {41.212649}
-            lng= {-114.209627}
+            lat= {center.lat}
+            lng= {center.lng}
         text="PSS Home Base"
         />
       </GoogleMapReact>

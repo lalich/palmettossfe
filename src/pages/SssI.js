@@ -21,7 +21,7 @@ const SssI = () => {
             <input type="text" name='specialty' placeholder='Your Specialty' />
             <input type="text" name='state' placeholder='State (two letters)' />
             <input type="text" name='zip_code' placeholder='Zip Code' />
-            <button>Join PSS</button>
+            <button type="submit">Join PSS</button>
             <h5>All Fields Required to Join</h5>
             </Form>
             

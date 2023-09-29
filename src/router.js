@@ -19,8 +19,8 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route path="School" element={<Schooli/>} loader={schoolIndexLoader} />
             <Route path="SSS/:id" element={<SssShow/>} loader={sssShowLoader}/>
             <Route path="School/:id" element={<SchoolShow/>} loader={schoolShowLoader}/>
-            <Route path="create/SSS" element={<SSS/>} action={createSSSAction}/>
-            <Route path="create/School" element={<School/>} action={createSchoolAction}/>
+            <Route path="create/SSS/" element={<SSS/>} action={createSSSAction}/>
+            <Route path="create/School/" element={<School/>} action={createSchoolAction}/>
             <Route path="update/SSS/:id" action={updateSSSAction}/>
             <Route path="update/School/:id" action={updateSchoolAction}/>
             <Route path="delete/SSS/:id" action={deleteSSSAction}/>
