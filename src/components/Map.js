@@ -4,6 +4,7 @@ import Marker from './Marker'
 
 
 export default function SimpleMap({ zipCode }){
+    // should be centering landing page on PSS HOME BASE at these coordinates
   const [center, setCenter] = useState({
       lat: 41.212649,
       lng: -114.209627
@@ -47,7 +48,7 @@ export default function SimpleMap({ zipCode }){
     // use map and maps objects
     console.log("Maps be Firing")
   };
-
+console.log('center', center)
   return (
     // Important! Always set the container height explicitly
     <div style={{ height: '100vh', width: '100%' }}>

@@ -1,10 +1,10 @@
 import {createBrowserRouter, createRoutesFromElements, Route} from 'react-router-dom';
 import App from "./App";
 import Home from "./pages/Home";
-import SssShow from "./pages/SssShow";
+import SssShow from "./pages/sssShow";
 import SssI from "./pages/SssI";
 import SSS from "./components/SSS"
-import SchoolShow from "./pages/SchoolShow"
+import SchoolShow from "./pages/schoolShow"
 import Schooli from "./pages/Schooli"
 import School from "./components/Schools"
 import {schoolIndexLoader, schoolShowLoader, sssIndexLoader, sssShowLoader, ssssAndSchoolsLoader} from "./loaders";
