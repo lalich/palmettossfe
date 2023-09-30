@@ -7,7 +7,7 @@ const SssShow = () => {
 console.log(specialist)
   const div = {
     textAlign: "center",
-    border: "3px solid green",
+    border: "3px solid purple",
     width: "80%",
     margin: "30px auto",
   };
@@ -21,7 +21,7 @@ console.log(specialist)
             
             <img src={specialist.sss_photo} alt="Profile Image" />
             <h3>{specialist.years_experience} Years of Experience</h3>
-            <h5>Personal Description: {specialist.description}</h5>
+            <h4>Personal Description: {specialist.description}</h4>
             <h3>Specialty: {specialist.specialty}</h3>
             <h4>State: {specialist.state}</h4>
             <h4>Zip: {specialist.zip_code}</h4>
@@ -40,7 +40,7 @@ console.log(specialist)
           <button>Update My Profile Beeze</button>
           </Form>
           <Form method="post" action={`/delete/SSS/${specialist.id}`}>
-            <button>I am done with this GiG, please deletel my profile!</button>
+            <button>I am done with this GiG, please delete my profile!</button>
         </Form>
         
       </div>

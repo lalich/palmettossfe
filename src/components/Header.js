@@ -11,7 +11,7 @@ const Header = ({ children }) => {
                 <div className='head-text'>
                 <Link to='/'><h1>Palmetto Security Solutions</h1></Link>
                
-                <h5>"The Meek Shall Inherit the Earth"</h5>
+                <h5 className='h5h'>"The Meek Shall Inherit the Earth"</h5>
                 </div>
             <img src='/PSS_Icon.png' alt='PSS Icon' className='logo-right'/>
             </header>

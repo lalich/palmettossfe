@@ -7,7 +7,7 @@ const SchoolShow = () => {
 
   const div = {
     textAlign: "center",
-    border: "3px solid green",
+    border: "3px solid blue",
     width: "80%",
     margin: "30px auto",
   };

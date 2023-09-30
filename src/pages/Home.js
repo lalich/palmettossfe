@@ -21,17 +21,21 @@ const Home = () => {
     return<>
     <div style={{textAlign: "center"}}>
         <Header></Header>
-        <div>
-
+        <div style={{ display: "flex", justifyContent: "space-between", backgroundColor: "black",
+                    textDecoration: "underline"}}>
+        <Link to="/School"><h2>PSS Protected Schools</h2></Link>
+        <Link to="/SSS"><h2>Our Current Specialists</h2></Link>
+        </div>
+        
+<div>
             <h3>Enter Zip Code: </h3>
                 <input type='text' value={zipCode} onChange={handleZipCodeChange} placeholder="Browse your zip code!" />
                 <SimpleMap zipCode={zipCode} schools={schools.zip_code} ssss={ssss.zip_code} />
 
         </div>
     </div>
-
-    <Link to="/School"><h2>Schools we Protect</h2></Link>
-    <Link to="/SSS"><h2>Our Current Specialists</h2></Link>
+    
+  
 
     
     

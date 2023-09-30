@@ -62,8 +62,8 @@ console.log('center', center)
 >
       
         <Marker
-            lat= {center.lat}
-            lng= {center.lng}
+        lat={41.212649}
+        lng={-114.209627}
         text="PSS Home Base"
         />
       </GoogleMapReact>
