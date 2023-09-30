@@ -28,7 +28,7 @@ const Home = () => {
         </div>
         
 <div>
-            <h3>Enter Zip Code: </h3>
+            <h4>Enter Zip Code Below: </h4>
                 <input type='text' value={zipCode} onChange={handleZipCodeChange} placeholder="Browse your zip code!" />
                 <SimpleMap zipCode={zipCode} schools={schools.zip_code} ssss={ssss.zip_code} />
 

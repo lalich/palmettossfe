@@ -17,7 +17,8 @@ console.log(specialist)
     <Header />
     <div style={div}>
      
-      <h2>{specialist.first_name} {specialist.last_name}</h2>
+      <h2>{specialist.first_name}</h2> 
+      <h2>{specialist.last_name}</h2>
             
             <img src={specialist.sss_photo} alt="Profile Image" />
             <h3>{specialist.years_experience} Years of Experience</h3>
